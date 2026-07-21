@@ -31,7 +31,7 @@
   .mono{font-family:'IBM Plex Mono',monospace;letter-spacing:0.02em;}
   a{color:inherit;text-decoration:none;}
   .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
- 
+
   /* ---------- Blueprint grid backdrop ---------- */
   .blueprint-bg{
     position:absolute;inset:0;
@@ -42,7 +42,7 @@
     opacity:0.08;
     pointer-events:none;
   }
- 
+
   /* ---------- Header ---------- */
   header{
     position:sticky;top:0;z-index:100;
@@ -55,7 +55,7 @@
     padding:18px 32px;max-width:1180px;margin:0 auto;
   }
   .logo{display:flex;align-items:center;line-height:1;}
-  .logo-img{display:none;height:60px;width:auto;object-fit:contain;}
+  .logo-img{display:none;height:46px;width:auto;object-fit:contain;}
   .logo-text{display:flex;flex-direction:column;line-height:1;}
   .logo-main{font-size:20px;font-weight:900;letter-spacing:0.02em;}
   .logo-sub{font-size:10px;font-weight:500;color:var(--ochre);letter-spacing:0.18em;font-family:'IBM Plex Mono',monospace;margin-top:4px;}
@@ -68,7 +68,7 @@
     border-radius:2px;
   }
   .nav-toggle{display:none;background:none;border:none;color:var(--white);font-size:26px;cursor:pointer;}
- 
+
   @media(max-width:840px){
     nav ul{
       position:fixed;top:64px;left:0;right:0;
@@ -83,7 +83,7 @@
     nav a, .nav-cta{display:block;padding:16px 32px;}
     .nav-toggle{display:block;}
   }
- 
+
   /* ---------- Hero ---------- */
   .hero{
     position:relative;
@@ -119,7 +119,7 @@
     padding:15px 30px;font-weight:600;font-size:14px;border-radius:2px;
   }
   .btn-ghost:hover{border-color:var(--ochre);color:var(--ochre);}
- 
+
   .stat-strip{
     display:grid;grid-template-columns:repeat(4,1fr);
     margin-top:70px;border-top:1px solid var(--charcoal-soft);padding-top:30px;
@@ -128,7 +128,7 @@
   .stat-num{font-family:'IBM Plex Mono',monospace;font-size:32px;font-weight:500;color:var(--ochre);}
   .stat-label{font-size:12px;color:#9a9489;margin-top:6px;letter-spacing:0.04em;}
   @media(max-width:640px){.stat-strip{grid-template-columns:repeat(2,1fr);}}
- 
+
   /* ---------- Section shared ---------- */
   section{position:relative;padding:100px 0;}
   .section-label{
@@ -139,7 +139,7 @@
   .section-label::before{content:'';width:26px;height:1px;background:var(--steel);}
   .section-title{font-size:clamp(28px,4vw,42px);font-weight:700;max-width:640px;margin-bottom:20px;}
   .section-intro{max-width:600px;color:#4a4640;font-size:16px;margin-bottom:56px;}
- 
+
   /* ---------- About ---------- */
   #about{background:var(--white);}
   .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
@@ -155,13 +155,13 @@
   .tl-year{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--steel);margin-bottom:4px;}
   .tl-title{font-weight:600;font-size:15.5px;margin-bottom:4px;}
   .tl-desc{font-size:14px;color:#6a655c;}
- 
+
   .values-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px;}
   @media(max-width:720px){.values-row{grid-template-columns:1fr;}}
   .value-card{border-top:2px solid var(--charcoal);padding-top:18px;}
   .value-card h3{font-size:17px;margin-bottom:8px;}
   .value-card p{font-size:14px;color:#6a655c;}
- 
+
   .team-row{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:64px;}
   @media(max-width:720px){.team-row{grid-template-columns:1fr;}}
   .team-card{
@@ -176,7 +176,7 @@
   }
   .team-name{font-weight:600;font-size:16px;}
   .team-role{font-size:13px;color:var(--steel);font-family:'IBM Plex Mono',monospace;margin-top:2px;}
- 
+
   /* ---------- Projects ---------- */
   /* ---------- Services ---------- */
   #services{background:var(--stone);}
@@ -193,7 +193,7 @@
   }
   .service-card h3{font-size:16.5px;margin-bottom:10px;}
   .service-items{font-size:13px;color:#6a655c;line-height:1.6;}
- 
+
   /* ---------- Projects ---------- */
   #projects{background:var(--stone);}
   .project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
@@ -228,7 +228,7 @@
     margin-top:14px;font-size:12px;color:var(--ochre);font-family:'IBM Plex Mono',monospace;
     display:flex;align-items:center;gap:6px;
   }
- 
+
   /* ---------- Lightbox ---------- */
   .lightbox{
     display:none;position:fixed;inset:0;z-index:1000;
@@ -257,7 +257,7 @@
     .lightbox-prev{left:-4px;}
     .lightbox-next{right:-4px;}
   }
- 
+
   /* ---------- Blogs ---------- */
   #blogs{background:var(--white);}
   .blog-list{display:flex;flex-direction:column;}
@@ -278,7 +278,7 @@
   @media(max-width:640px){
     .blog-row{grid-template-columns:1fr;gap:8px;}
   }
- 
+
   /* ---------- Contact ---------- */
   #contact{background:var(--charcoal);color:var(--white);position:relative;}
   #contact .blueprint-bg{opacity:0.06;}
@@ -293,7 +293,7 @@
   .contact-detail{margin-top:30px;}
   .contact-detail-row{display:flex;gap:14px;margin-bottom:20px;font-size:14.5px;color:#C7C2B8;}
   .contact-detail-row .label{color:var(--ochre);font-family:'IBM Plex Mono',monospace;font-size:12px;min-width:70px;text-transform:uppercase;letter-spacing:0.06em;}
- 
+
   .form-card{
     background:var(--charcoal-soft);
     border:1px solid #3a4048;
@@ -323,7 +323,7 @@
   }
   .form-msg.success{display:block;background:rgba(80,140,90,0.15);color:#8fd19e;border:1px solid rgba(80,140,90,0.3);}
   .form-msg.error{display:block;background:rgba(200,90,70,0.15);color:#e69b8a;border:1px solid rgba(200,90,70,0.3);}
- 
+
   /* ---------- Footer ---------- */
   footer{background:var(--charcoal);border-top:1px solid var(--charcoal-soft);padding:32px 0;}
   .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
@@ -331,7 +331,7 @@
 </style>
 </head>
 <body>
- 
+
 <header>
   <div class="nav-inner">
     <div class="logo">
@@ -357,7 +357,7 @@
     <button class="nav-toggle" id="navToggle">&#9776;</button>
   </div>
 </header>
- 
+
 <!-- HOME -->
 <section id="home" class="hero">
   <div class="blueprint-bg"></div>
@@ -375,11 +375,11 @@
         <div class="stat-label">Founded In</div>
       </div>
       <div>
-        <div class="stat-num">9</div>
+        <div class="stat-num">2</div>
         <div class="stat-label">Projects Completed</div>
       </div>
       <div>
-        <div class="stat-num">4</div>
+        <div class="stat-num">1</div>
         <div class="stat-label">Project Ongoing</div>
       </div>
       <div>
@@ -389,7 +389,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- ABOUT -->
 <section id="about">
   <div class="wrap">
@@ -397,7 +397,7 @@
     <h2 class="section-title">A new name in Hyderabad building on solid ground.</h2>
     <div class="about-grid">
       <div class="about-copy">
-        <p>Eminent Infra Developers was founded in 2024 in Hyderabad with a simple premise: construction quality shouldn't be negotiable, and timelines shouldn't be a surprise.In just two years, we've delivered 9 projects from private residences to commercial interiors and community restoration work each personally overseen by our founders from the first survey to the final handover. What sets us apart isn't size, it's accountability: no subcontractors disappearing mid-project, no vague timelines, just a small team that stays hands-on until the job is actually done right.</p>
+        <p>Eminent Infra Developers was founded in 2024 in Hyderabad with a simple premise: construction quality shouldn't be negotiable, and timelines shouldn't be a surprise. In our first two years, we've completed 2 projects totaling around 70,000 sq. ft., with a third project currently underway and new projects launching soon.</p>
         <p>We're a lean, hands-on team — every project is personally overseen from design through handover, so nothing gets lost between contractors.</p>
         <p>We work RERA-compliant on our residential projects, and our site engineering keeps clients updated on real progress at every stage of construction.</p>
       </div>
@@ -409,8 +409,8 @@
         </div>
         <div class="tl-item">
           <div class="tl-year">2024 – 2026</div>
-          <div class="tl-title">9 projects completed</div>
-          <div class="tl-desc">Delivered close to 70,000 sq. ft. across our early projects.</div>
+          <div class="tl-title">First 2 projects completed</div>
+          <div class="tl-desc">Delivered close to 70,000 sq. ft. across our early projects, with a third project ongoing.</div>
         </div>
         <div class="tl-item">
           <div class="tl-year">2026</div>
@@ -419,7 +419,7 @@
         </div>
       </div>
     </div>
- 
+
     <div class="values-row">
       <div class="value-card">
         <h3>Structural integrity first</h3>
@@ -434,7 +434,7 @@
         <p>A small, senior team stays personally involved in every project, from planning to handover.</p>
       </div>
     </div>
- 
+
     <div class="team-row">
       <div class="team-card">
         <div class="team-avatar">MK</div>
@@ -453,15 +453,15 @@
     </div>
   </div>
 </section>
- 
- 
+
+
 <!-- SERVICES -->
 <section id="services">
   <div class="wrap">
     <div class="section-label">What We Do</div>
     <h2 class="section-title">From the first survey to the final coat of paint.</h2>
     <p class="section-intro">We handle every phase of construction in-house — so nothing gets lost between contractors, and every stage stays accountable to one team.</p>
- 
+
     <div class="service-grid">
       <div class="service-card">
         <div class="service-num">01</div>
@@ -531,26 +531,26 @@
     </div>
   </div>
 </section>
- 
+
 <!-- PROJECTS -->
 <section id="projects">
   <div class="wrap">
     <div class="section-label">Projects</div>
     <h2 class="section-title">Completed and upcoming, across Hyderabad.</h2>
     <p class="section-intro">Since 2024 we've completed 2 projects totaling around 70,000 sq. ft., with a third project ongoing and new projects launching soon. Add photos by uploading image files (named project-4.jpg, etc.) into the same folder as index.html.</p>
- 
+
     <div class="project-grid">
       <div class="project-card" data-gallery="wonderfarms">
         <div class="project-media">
           <div class="blueprint-bg"></div>
-          <img src="project-1.jpg" class="project-photo" alt="Wonder Farms" onload="this.style.display='block';" onerror="this.style.display='none';">
+          <img src="project-5-v2.jpeg" class="project-photo" alt="Wonder Farms 3BHK" onload="this.style.display='block';" onerror="this.style.display='none';">
           <span class="project-tag">Completed</span>
         </div>
         <div class="project-body">
-          <h3>Wonder Farms</h3>
+          <h3>Wonder Farms 3BHK</h3>
           <div class="project-loc">Hyderabad</div>
           <p>A private farmhouse-style residence with a landscaped lawn, pergola-covered patios, a dedicated pool, and an outdoor sports court.</p>
-          <div class="gallery-hint">&#9679; View 7 photos</div>
+          <div class="gallery-hint">&#9679; View 5 photos</div>
         </div>
       </div>
       <div class="project-card" data-gallery="office1">
@@ -594,13 +594,13 @@
     </div>
   </div>
 </section>
- 
+
 <!-- BLOGS -->
 <section id="blogs">
   <div class="wrap">
     <div class="section-label">Blogs</div>
     <h2 class="section-title">Notes from the site and the industry.</h2>
- 
+
     <div class="blog-list">
       <div class="blog-row">
         <div class="blog-date">12 Jul 2026</div>
@@ -637,7 +637,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="blueprint-bg"></div>
@@ -654,7 +654,7 @@
           <div class="contact-detail-row"><span class="label">Hours</span><span>Mon – Sat, 9:30 AM – 6:30 PM</span></div>
         </div>
       </div>
- 
+
       <div class="form-card">
         <form id="leadForm" novalidate>
           <div class="field">
@@ -679,7 +679,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
   <div class="lightbox-inner">
@@ -690,31 +690,31 @@
     <div class="lightbox-caption" id="lightboxCaption"></div>
   </div>
 </div>
- 
+
 <footer>
   <div class="wrap footer-inner">
     <p>&copy; 2026 EMINENT INFRA DEVELOPERS. ALL RIGHTS RESERVED.</p>
     <p>HYDERABAD, TELANGANA, INDIA</p>
   </div>
 </footer>
- 
+
 <script>
   // Mobile nav toggle
   const navToggle = document.getElementById('navToggle');
   const navList = document.getElementById('navList');
   navToggle.addEventListener('click', () => navList.classList.toggle('open'));
   navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navList.classList.remove('open')));
- 
+
   // Project photo galleries — add more projects here as photos come in
   const galleries = {
     wonderfarms: {
-      title: 'Wonder Farms',
+      title: 'Wonder Farms 3BHK',
       images: [
+        'project-5-v2.jpeg',
+        'project-4-v2.jpeg',
         'project-1-v2.jpeg',
         'project-2-v2.jpeg',
-        'project-3-v2.jpeg',
-        'project-4-v2.jpeg',
-        'project-5-v2.jpeg',
+        'project-3-v2.jpeg'
       ]
     },
     office1: {
@@ -738,13 +738,13 @@
       ]
     }
   };
- 
+
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxCaption = document.getElementById('lightboxCaption');
   let currentGallery = null;
   let currentIndex = 0;
- 
+
   function openGallery(key){
     const g = galleries[key];
     if(!g) return;
@@ -753,16 +753,16 @@
     showImage();
     lightbox.classList.add('open');
   }
- 
+
   function showImage(){
     lightboxImg.src = currentGallery.images[currentIndex];
     lightboxCaption.textContent = currentGallery.title + ' — photo ' + (currentIndex + 1) + ' of ' + currentGallery.images.length;
   }
- 
+
   document.querySelectorAll('.project-card[data-gallery]').forEach(card => {
     card.addEventListener('click', () => openGallery(card.dataset.gallery));
   });
- 
+
   document.getElementById('lightboxClose').addEventListener('click', () => lightbox.classList.remove('open'));
   lightbox.addEventListener('click', (e) => { if(e.target === lightbox) lightbox.classList.remove('open'); });
   document.getElementById('lightboxPrev').addEventListener('click', (e) => {
@@ -781,49 +781,49 @@
     if(e.key === 'ArrowLeft') document.getElementById('lightboxPrev').click();
     if(e.key === 'ArrowRight') document.getElementById('lightboxNext').click();
   });
- 
+
   // Lead form handling with persistent storage
   const form = document.getElementById('leadForm');
   const submitBtn = document.getElementById('submitBtn');
   const formMsg = document.getElementById('formMsg');
- 
+
   function showFieldError(id, show){
     document.getElementById('err-' + id).style.display = show ? 'block' : 'none';
   }
- 
+
   function validate(name, email, phone){
     let valid = true;
     if(!name){ showFieldError('fname', true); valid = false; } else { showFieldError('fname', false); }
- 
+
     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     if(!emailOk){ showFieldError('femail', true); valid = false; } else { showFieldError('femail', false); }
- 
+
     const phoneOk = /^[0-9+\-\s()]{7,15}$/.test(phone);
     if(!phoneOk){ showFieldError('fphone', true); valid = false; } else { showFieldError('fphone', false); }
- 
+
     return valid;
   }
- 
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     formMsg.className = 'form-msg';
     formMsg.style.display = 'none';
- 
+
     const name = document.getElementById('fname').value.trim();
     const email = document.getElementById('femail').value.trim();
     const phone = document.getElementById('fphone').value.trim();
- 
+
     if(!validate(name, email, phone)) return;
- 
+
     submitBtn.disabled = true;
     submitBtn.textContent = 'Submitting...';
- 
+
     const entry = {
       name, email, phone,
       submittedAt: new Date().toISOString()
     };
     const key = 'lead:' + Date.now() + '-' + Math.random().toString(36).slice(2,8);
- 
+
     try {
       const result = await window.storage.set(key, JSON.stringify(entry), true);
       if(!result){
@@ -842,6 +842,6 @@
     }
   });
 </script>
- 
+
 </body>
 </html>
