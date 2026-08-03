@@ -140,44 +140,6 @@
   .section-title{font-size:clamp(28px,4vw,42px);font-weight:700;max-width:640px;margin-bottom:20px;}
   .section-intro{max-width:600px;color:#4a4640;font-size:16px;margin-bottom:56px;}
 
-  /* ---------- About ---------- */
-  #about{background:var(--white);}
-  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
-  @media(max-width:840px){.about-grid{grid-template-columns:1fr;}}
-  .about-copy p{color:#4a4640;margin-bottom:18px;font-size:15.5px;}
-  .timeline{border-left:2px solid var(--stone-dim);padding-left:28px;}
-  .tl-item{position:relative;padding-bottom:34px;}
-  .tl-item:last-child{padding-bottom:0;}
-  .tl-item::before{
-    content:'';position:absolute;left:-34px;top:4px;
-    width:10px;height:10px;background:var(--ochre);border-radius:50%;
-  }
-  .tl-year{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--steel);margin-bottom:4px;}
-  .tl-title{font-weight:600;font-size:15.5px;margin-bottom:4px;}
-  .tl-desc{font-size:14px;color:#6a655c;}
-
-  .values-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px;}
-  @media(max-width:720px){.values-row{grid-template-columns:1fr;}}
-  .value-card{border-top:2px solid var(--charcoal);padding-top:18px;}
-  .value-card h3{font-size:17px;margin-bottom:8px;}
-  .value-card p{font-size:14px;color:#6a655c;}
-
-  .team-row{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:64px;}
-  @media(max-width:720px){.team-row{grid-template-columns:1fr;}}
-  .team-card{
-    background:var(--stone);border:1px solid var(--stone-dim);
-    padding:26px;display:flex;gap:18px;align-items:center;
-  }
-  .team-avatar{
-    width:56px;height:56px;border-radius:50%;flex-shrink:0;
-    background:linear-gradient(135deg,var(--steel) 0%, var(--charcoal) 100%);
-    display:flex;align-items:center;justify-content:center;
-    color:var(--white);font-family:'Archivo',sans-serif;font-weight:700;font-size:18px;
-  }
-  .team-name{font-weight:600;font-size:16px;}
-  .team-role{font-size:13px;color:var(--steel);font-family:'IBM Plex Mono',monospace;margin-top:2px;}
-
-  /* ---------- Projects ---------- */
   /* ---------- Services ---------- */
   #services{background:var(--stone);}
   .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
@@ -346,12 +308,12 @@
     </div>
     <nav>
       <ul id="navList">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#blogs">Blogs</a></li>
-        <li><a href="#contact" class="nav-cta">Enquire Now</a></li>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#blogs">Blogs</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Enquire Now</a></li>
       </ul>
     </nav>
     <button class="nav-toggle" id="navToggle">&#9776;</button>
@@ -366,8 +328,8 @@
     <h1>Structures built to <span>outlast</span> the blueprint.</h1>
     <p>Eminent Infra Developers designs and constructs residential, commercial and industrial spaces across Hyderabad — engineered for durability, delivered on schedule.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Get a Site Visit</a>
-      <a href="#projects" class="btn-ghost">View Projects</a>
+      <a href="index.html#contact" class="btn-primary">Get a Site Visit</a>
+      <a href="index.html#projects" class="btn-ghost">View Projects</a>
     </div>
     <div class="stat-strip">
       <div>
@@ -389,71 +351,6 @@
     </div>
   </div>
 </section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="wrap">
-    <div class="section-label">About Us</div>
-    <h2 class="section-title">A new name in Hyderabad building on solid ground.</h2>
-    <div class="about-grid">
-      <div class="about-copy">
-        <p>Eminent Infra Developers was founded in 2024 in Hyderabad with a simple premise: construction quality shouldn't be negotiable, and timelines shouldn't be a surprise. In our first two years, we've completed 2 projects totaling around 70,000 sq. ft., with a third project currently underway and new projects launching soon.</p>
-        <p>We're a lean, hands-on team — every project is personally overseen from design through handover, so nothing gets lost between contractors.</p>
-        <p>We work RERA-compliant on our residential projects, and our site engineering keeps clients updated on real progress at every stage of construction.</p>
-      </div>
-      <div class="timeline">
-        <div class="tl-item">
-          <div class="tl-year">2024</div>
-          <div class="tl-title">Company founded</div>
-          <div class="tl-desc">Eminent Infra Developers launched in Hyderabad.</div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-year">2024 – 2026</div>
-          <div class="tl-title">First 2 projects completed</div>
-          <div class="tl-desc">Delivered close to 70,000 sq. ft. across our early projects, with a third project ongoing.</div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-year">2026</div>
-          <div class="tl-title">New projects launching</div>
-          <div class="tl-desc">Upcoming residential and commercial projects in the pipeline.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="values-row">
-      <div class="value-card">
-        <h3>Structural integrity first</h3>
-        <p>Every design is engineered to code and stress-tested before a single foundation is poured.</p>
-      </div>
-      <div class="value-card">
-        <h3>Transparent scheduling</h3>
-        <p>Clients get real progress updates, not projected ones — visible at every site visit.</p>
-      </div>
-      <div class="value-card">
-        <h3>Hands-on leadership</h3>
-        <p>A small, senior team stays personally involved in every project, from planning to handover.</p>
-      </div>
-    </div>
-
-    <div class="team-row">
-      <div class="team-card">
-        <div class="team-avatar">MK</div>
-        <div>
-          <div class="team-name">Mohammed Khaleeluddin</div>
-          <div class="team-role">Managing Director</div>
-        </div>
-      </div>
-      <div class="team-card">
-        <div class="team-avatar">MA</div>
-        <div>
-          <div class="team-name">Mohammed Aleemuddin</div>
-          <div class="team-role">Project Engineer</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 
 <!-- SERVICES -->
 <section id="services">
