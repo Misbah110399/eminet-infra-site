@@ -8,21 +8,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --charcoal:#1B1F23;
-    --charcoal-soft:#2A2F35;
-    --stone:#E7E3DB;
-    --stone-dim:#D8D3C7;
-    --steel:#3E5C74;
-    --steel-light:#5C82A0;
-    --ochre:#C97F2E;
-    --line:#A9A398;
+    --navy-deepest:#070C1F;
+    --navy-deep:#0B1330;
+    --navy:#101A3D;
+    --navy-card:#17224A;
+    --navy-line:#2A3660;
+    --gold:#C99A44;
+    --gold-bright:#E7C077;
+    --gold-deep:#8B6914;
+    --text-light:#F2EFE7;
+    --text-muted:#A9B3CE;
     --white:#F7F5F0;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
-    background:var(--stone);
-    color:var(--charcoal);
+    background:var(--navy);
+    color:var(--text-light);
     font-family:'IBM Plex Sans',sans-serif;
     line-height:1.5;
     overflow-x:hidden;
@@ -32,23 +34,34 @@
   a{color:inherit;text-decoration:none;}
   .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
 
-  /* ---------- Blueprint grid backdrop ---------- */
-  .blueprint-bg{
-    position:absolute;inset:0;
-    background-image:
-      linear-gradient(var(--line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size:48px 48px;
-    opacity:0.08;
+  /* ---------- Animated skyline background ---------- */
+  .skyline-layer{
+    position:absolute;left:0;right:0;bottom:0;
+    background-repeat:repeat-x;
+    background-size:auto 100%;
     pointer-events:none;
   }
+  .skyline-back{
+    height:120px;
+    background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iMTUwIiB2aWV3Qm94PSIwIDAgOTAwIDE1MCI+PHJlY3QgeD0iMCIgeT0iNjIiIHdpZHRoPSIzMCIgaGVpZ2h0PSI4OCIgZmlsbD0iIzIzMzI1OCIvPjxyZWN0IHg9IjM2IiB5PSI1MSIgd2lkdGg9IjU3IiBoZWlnaHQ9Ijk5IiBmaWxsPSIjMjMzMjU4Ii8+PHJlY3QgeD0iOTgiIHk9IjIyIiB3aWR0aD0iNTciIGhlaWdodD0iMTI4IiBmaWxsPSIjMjMzMjU4Ii8+PHJlY3QgeD0iMTU5IiB5PSI0MyIgd2lkdGg9IjYwIiBoZWlnaHQ9IjEwNyIgZmlsbD0iIzIzMzI1OCIvPjxyZWN0IHg9IjIzMiIgeT0iNDgiIHdpZHRoPSI1NSIgaGVpZ2h0PSIxMDIiIGZpbGw9IiMyMzMyNTgiLz48cmVjdCB4PSIyNTguMCIgeT0iMzAiIHdpZHRoPSIzIiBoZWlnaHQ9IjE4IiBmaWxsPSIjMjMzMjU4Ii8+PHJlY3QgeD0iMjkyIiB5PSI1MCIgd2lkdGg9IjM1IiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzIzMzI1OCIvPjxyZWN0IHg9IjMwOC4wIiB5PSIzMiIgd2lkdGg9IjMiIGhlaWdodD0iMTgiIGZpbGw9IiMyMzMyNTgiLz48cmVjdCB4PSIzMzMiIHk9IjM1IiB3aWR0aD0iNjAiIGhlaWdodD0iMTE1IiBmaWxsPSIjMjMzMjU4Ii8+PHJlY3QgeD0iMzYxLjUiIHk9IjE3IiB3aWR0aD0iMyIgaGVpZ2h0PSIxOCIgZmlsbD0iIzIzMzI1OCIvPjxyZWN0IHg9IjQwMyIgeT0iNjQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI4NiIgZmlsbD0iIzIzMzI1OCIvPjxyZWN0IHg9IjQ3MyIgeT0iOTIiIHdpZHRoPSIzMiIgaGVpZ2h0PSI1OCIgZmlsbD0iIzIzMzI1OCIvPjxyZWN0IHg9IjUxMSIgeT0iNzciIHdpZHRoPSIzMSIgaGVpZ2h0PSI3MyIgZmlsbD0iIzIzMzI1OCIvPjxyZWN0IHg9IjU0NyIgeT0iMjQiIHdpZHRoPSIzNCIgaGVpZ2h0PSIxMjYiIGZpbGw9IiMyMzMyNTgiLz48cmVjdCB4PSI1OTUiIHk9Ijg2IiB3aWR0aD0iMzEiIGhlaWdodD0iNjQiIGZpbGw9IiMyMzMyNTgiLz48cmVjdCB4PSI2MzciIHk9IjU2IiB3aWR0aD0iNDkiIGhlaWdodD0iOTQiIGZpbGw9IiMyMzMyNTgiLz48cmVjdCB4PSI2OTciIHk9IjgyIiB3aWR0aD0iMzgiIGhlaWdodD0iNjgiIGZpbGw9IiMyMzMyNTgiLz48cmVjdCB4PSI3NDQiIHk9IjIzIiB3aWR0aD0iMzEiIGhlaWdodD0iMTI3IiBmaWxsPSIjMjMzMjU4Ii8+PHJlY3QgeD0iNzgxIiB5PSIyOCIgd2lkdGg9IjMyIiBoZWlnaHQ9IjEyMiIgZmlsbD0iIzIzMzI1OCIvPjxyZWN0IHg9IjgyMSIgeT0iNTIiIHdpZHRoPSI1OSIgaGVpZ2h0PSI5OCIgZmlsbD0iIzIzMzI1OCIvPjxyZWN0IHg9Ijg4NCIgeT0iNDUiIHdpZHRoPSI1OCIgaGVpZ2h0PSIxMDUiIGZpbGw9IiMyMzMyNTgiLz48L3N2Zz4=");
+    opacity:0.4;
+    animation:skylineScrollBack 100s linear infinite;
+  }
+  .skyline-front{
+    height:150px;
+    background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iMTgwIiB2aWV3Qm94PSIwIDAgOTAwIDE4MCI+PHJlY3QgeD0iMCIgeT0iNTIiIHdpZHRoPSI1NCIgaGVpZ2h0PSIxMjgiIGZpbGw9IiMyRjQzNzQiLz48cmVjdCB4PSI1OSIgeT0iNzAiIHdpZHRoPSIzOSIgaGVpZ2h0PSIxMTAiIGZpbGw9IiMyRjQzNzQiLz48cmVjdCB4PSI3Ny4wIiB5PSI1MiIgd2lkdGg9IjMiIGhlaWdodD0iMTgiIGZpbGw9IiMyRjQzNzQiLz48cmVjdCB4PSIxMDIiIHk9IjEwNCIgd2lkdGg9IjQyIiBoZWlnaHQ9Ijc2IiBmaWxsPSIjMkY0Mzc0Ii8+PHJlY3QgeD0iMTQ5IiB5PSIxOSIgd2lkdGg9IjM4IiBoZWlnaHQ9IjE2MSIgZmlsbD0iIzJGNDM3NCIvPjxyZWN0IHg9IjE5NSIgeT0iNDMiIHdpZHRoPSI1MiIgaGVpZ2h0PSIxMzciIGZpbGw9IiMyRjQzNzQiLz48cmVjdCB4PSIyNjEiIHk9IjczIiB3aWR0aD0iNDgiIGhlaWdodD0iMTA3IiBmaWxsPSIjMkY0Mzc0Ii8+PHJlY3QgeD0iMjgzLjUiIHk9IjU1IiB3aWR0aD0iMyIgaGVpZ2h0PSIxOCIgZmlsbD0iIzJGNDM3NCIvPjxyZWN0IHg9IjMxNyIgeT0iMTA0IiB3aWR0aD0iMzgiIGhlaWdodD0iNzYiIGZpbGw9IiMyRjQzNzQiLz48cmVjdCB4PSIzNjgiIHk9Ijg0IiB3aWR0aD0iMzQiIGhlaWdodD0iOTYiIGZpbGw9IiMyRjQzNzQiLz48cmVjdCB4PSI0MDciIHk9IjExNCIgd2lkdGg9IjQ2IiBoZWlnaHQ9IjY2IiBmaWxsPSIjMkY0Mzc0Ii8+PHJlY3QgeD0iNDU4IiB5PSI1OCIgd2lkdGg9IjU4IiBoZWlnaHQ9IjEyMiIgZmlsbD0iIzJGNDM3NCIvPjxyZWN0IHg9IjUyMyIgeT0iODUiIHdpZHRoPSIzNiIgaGVpZ2h0PSI5NSIgZmlsbD0iIzJGNDM3NCIvPjxyZWN0IHg9IjU2MyIgeT0iMzIiIHdpZHRoPSIzMCIgaGVpZ2h0PSIxNDgiIGZpbGw9IiMyRjQzNzQiLz48cmVjdCB4PSI2MDciIHk9IjI4IiB3aWR0aD0iNTUiIGhlaWdodD0iMTUyIiBmaWxsPSIjMkY0Mzc0Ii8+PHJlY3QgeD0iNjMzLjAiIHk9IjEwIiB3aWR0aD0iMyIgaGVpZ2h0PSIxOCIgZmlsbD0iIzJGNDM3NCIvPjxyZWN0IHg9IjY3NiIgeT0iNzEiIHdpZHRoPSI0OSIgaGVpZ2h0PSIxMDkiIGZpbGw9IiMyRjQzNzQiLz48cmVjdCB4PSI3MzkiIHk9IjQzIiB3aWR0aD0iNTciIGhlaWdodD0iMTM3IiBmaWxsPSIjMkY0Mzc0Ii8+PHJlY3QgeD0iODAyIiB5PSI1NyIgd2lkdGg9IjQyIiBoZWlnaHQ9IjEyMyIgZmlsbD0iIzJGNDM3NCIvPjxyZWN0IHg9Ijg1OCIgeT0iNDAiIHdpZHRoPSI1MCIgaGVpZ2h0PSIxNDAiIGZpbGw9IiMyRjQzNzQiLz48L3N2Zz4=");
+    opacity:0.6;
+    animation:skylineScrollFront 55s linear infinite;
+  }
+  @keyframes skylineScrollBack{ from{background-position-x:0;} to{background-position-x:-900px;} }
+  @keyframes skylineScrollFront{ from{background-position-x:0;} to{background-position-x:-900px;} }
 
   /* ---------- Header ---------- */
   header{
     position:sticky;top:0;z-index:100;
-    background:var(--charcoal);
-    color:var(--white);
-    border-bottom:2px solid var(--ochre);
+    background:var(--navy-deepest);
+    color:var(--text-light);
+    border-bottom:2px solid var(--gold);
   }
   .nav-inner{
     display:flex;align-items:center;justify-content:space-between;
@@ -58,29 +71,30 @@
   .logo-img{display:none;height:46px;width:auto;object-fit:contain;}
   .logo-text{display:flex;flex-direction:column;line-height:1;}
   .logo-main{font-size:20px;font-weight:900;letter-spacing:0.02em;}
-  .logo-sub{font-size:10px;font-weight:500;color:var(--ochre);letter-spacing:0.18em;font-family:'IBM Plex Mono',monospace;margin-top:4px;}
+  .logo-sub{font-size:10px;font-weight:500;color:var(--gold);letter-spacing:0.18em;font-family:'IBM Plex Mono',monospace;margin-top:4px;}
   nav ul{list-style:none;display:flex;gap:36px;}
   nav a{font-size:14px;font-weight:500;position:relative;padding:4px 0;transition:color .2s;}
-  nav a:hover{color:var(--ochre);}
-  nav a.active{color:var(--ochre);}
+  nav a:hover{color:var(--gold-bright);}
+  nav a.active{color:var(--gold);}
   .nav-cta{
-    background:var(--ochre);color:var(--charcoal);
+    background:var(--gold);color:var(--navy-deepest);
     padding:10px 20px;font-weight:600;font-size:13px;
     border-radius:2px;
   }
-  .nav-toggle{display:none;background:none;border:none;color:var(--white);font-size:26px;cursor:pointer;}
+  .nav-cta:hover{background:var(--gold-bright);}
+  .nav-toggle{display:none;background:none;border:none;color:var(--text-light);font-size:26px;cursor:pointer;}
 
   @media(max-width:840px){
     nav ul{
       position:fixed;top:64px;left:0;right:0;
-      background:var(--charcoal);
+      background:var(--navy-deepest);
       flex-direction:column;gap:0;
       max-height:0;overflow:hidden;
       transition:max-height .3s ease;
-      border-bottom:1px solid var(--charcoal-soft);
+      border-bottom:1px solid var(--navy-line);
     }
     nav ul.open{max-height:400px;}
-    nav ul li{border-top:1px solid var(--charcoal-soft);}
+    nav ul li{border-top:1px solid var(--navy-line);}
     nav a, .nav-cta{display:block;padding:16px 32px;}
     .nav-toggle{display:block;}
   }
@@ -88,85 +102,88 @@
   /* ---------- Page header banner ---------- */
   .page-hero{
     position:relative;
-    background:var(--charcoal);
-    color:var(--white);
-    padding:80px 0 64px;
+    background:linear-gradient(180deg, var(--navy-deep) 0%, #0D1738 100%);
+    color:var(--text-light);
+    padding:80px 0 150px;
     overflow:hidden;
   }
   .page-hero .wrap{position:relative;z-index:2;}
-  .page-hero .section-label{color:var(--ochre);}
-  .page-hero .section-label::before{background:var(--ochre);}
+  .page-hero .section-label{color:var(--gold);}
+  .page-hero .section-label::before{background:var(--gold);}
   .page-hero h1{
     font-size:clamp(32px,5vw,54px);
-    font-weight:900;color:var(--white);max-width:760px;
+    font-weight:900;color:var(--text-light);max-width:760px;
   }
-  .page-hero p{max-width:560px;margin-top:18px;font-size:16px;color:#C7C2B8;}
+  .page-hero p{max-width:560px;margin-top:18px;font-size:16px;color:var(--text-muted);}
 
   /* ---------- Section shared ---------- */
   section{position:relative;padding:90px 0;}
   .section-label{
-    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--steel);
+    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--gold);
     text-transform:uppercase;letter-spacing:0.2em;margin-bottom:14px;
     display:flex;align-items:center;gap:10px;
   }
-  .section-label::before{content:'';width:26px;height:1px;background:var(--steel);}
-  .section-title{font-size:clamp(28px,4vw,42px);font-weight:700;max-width:640px;margin-bottom:20px;}
-  .section-intro{max-width:600px;color:#4a4640;font-size:16px;margin-bottom:56px;}
+  .section-label::before{content:'';width:26px;height:1px;background:var(--gold);}
+  .section-title{font-size:clamp(28px,4vw,42px);font-weight:700;max-width:640px;margin-bottom:20px;color:var(--text-light);}
+  .section-intro{max-width:600px;color:var(--text-muted);font-size:16px;margin-bottom:56px;}
 
   /* ---------- About body ---------- */
-  #about-body{background:var(--white);}
+  #about-body{background:var(--navy);}
   .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
   @media(max-width:840px){.about-grid{grid-template-columns:1fr;}}
-  .about-copy p{color:#4a4640;margin-bottom:18px;font-size:15.5px;}
-  .timeline{border-left:2px solid var(--stone-dim);padding-left:28px;}
+  .about-copy p{color:var(--text-muted);margin-bottom:18px;font-size:15.5px;}
+  .timeline{border-left:2px solid var(--navy-line);padding-left:28px;}
   .tl-item{position:relative;padding-bottom:34px;}
   .tl-item:last-child{padding-bottom:0;}
   .tl-item::before{
     content:'';position:absolute;left:-34px;top:4px;
-    width:10px;height:10px;background:var(--ochre);border-radius:50%;
+    width:10px;height:10px;background:var(--gold);border-radius:50%;
   }
-  .tl-year{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--steel);margin-bottom:4px;}
-  .tl-title{font-weight:600;font-size:15.5px;margin-bottom:4px;}
-  .tl-desc{font-size:14px;color:#6a655c;}
+  .tl-year{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--gold);margin-bottom:4px;}
+  .tl-title{font-weight:600;font-size:15.5px;margin-bottom:4px;color:var(--text-light);}
+  .tl-desc{font-size:14px;color:var(--text-muted);}
 
   .values-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px;}
   @media(max-width:720px){.values-row{grid-template-columns:1fr;}}
-  .value-card{border-top:2px solid var(--charcoal);padding-top:18px;}
-  .value-card h3{font-size:17px;margin-bottom:8px;}
-  .value-card p{font-size:14px;color:#6a655c;}
+  .value-card{
+    background:var(--navy-card);border:1px solid var(--navy-line);border-top:2px solid var(--gold);
+    padding:22px;
+  }
+  .value-card h3{font-size:17px;margin-bottom:8px;color:var(--text-light);}
+  .value-card p{font-size:14px;color:var(--text-muted);}
 
-  /* ---------- Team ---------- */
-  #team{background:var(--stone);}
-  .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
-  @media(max-width:900px){.team-grid{grid-template-columns:repeat(2,1fr);}}
-  @media(max-width:620px){.team-grid{grid-template-columns:1fr;}}
-  .team-card{
-    background:var(--white);border:1px solid var(--stone-dim);
-    padding:28px;display:flex;flex-direction:column;align-items:center;text-align:center;
+  /* ---------- Team (no boxes — name on top, photo, then bio) ---------- */
+  #team{background:var(--navy-deep);}
+  .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:56px;}
+  @media(max-width:900px){.team-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto;}}
+  .team-member{text-align:center;}
+  .team-name-top{
+    font-family:'Archivo',sans-serif;font-weight:700;font-size:21px;
+    color:var(--gold-bright);margin-bottom:22px;
   }
   .team-photo-wrap{
-    width:120px;height:120px;border-radius:50%;flex-shrink:0;margin-bottom:20px;
+    width:150px;height:150px;border-radius:50%;flex-shrink:0;margin:0 auto 22px;
     position:relative;overflow:hidden;
-    background:linear-gradient(135deg,var(--steel) 0%, var(--charcoal) 100%);
+    background:linear-gradient(135deg,var(--navy-line) 0%, var(--navy-deepest) 100%);
+    border:2px solid var(--gold);
     display:flex;align-items:center;justify-content:center;
   }
   .team-photo{
     display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
   }
   .team-avatar-fallback{
-    color:var(--white);font-family:'Archivo',sans-serif;font-weight:700;font-size:32px;
+    color:var(--text-light);font-family:'Archivo',sans-serif;font-weight:700;font-size:36px;
   }
-  .team-name{font-weight:700;font-size:17px;}
   .team-role{
-    font-size:12px;color:var(--ochre);font-family:'IBM Plex Mono',monospace;
-    margin-top:4px;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.06em;
+    font-size:12px;color:var(--gold);font-family:'IBM Plex Mono',monospace;
+    margin-bottom:16px;text-transform:uppercase;letter-spacing:0.08em;
   }
-  .team-bio{font-size:14px;color:#6a655c;line-height:1.6;}
+  .team-bio{font-size:14px;color:var(--text-muted);line-height:1.7;max-width:280px;margin:0 auto;}
 
   /* ---------- Footer ---------- */
-  footer{background:var(--charcoal);border-top:1px solid var(--charcoal-soft);padding:32px 0;}
+  footer{background:var(--navy-deepest);border-top:1px solid var(--navy-line);padding:32px 0;}
   .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
-  .footer-inner p{font-size:12px;color:#8a8479;font-family:'IBM Plex Mono',monospace;}
+  .footer-inner p{font-size:12px;color:var(--text-muted);font-family:'IBM Plex Mono',monospace;}
 </style>
 </head>
 <body>
@@ -198,7 +215,8 @@
 
 <!-- PAGE HERO -->
 <section class="page-hero">
-  <div class="blueprint-bg"></div>
+  <div class="skyline-layer skyline-back"></div>
+  <div class="skyline-layer skyline-front"></div>
   <div class="wrap">
     <div class="section-label">About Us</div>
     <h1>A new name in Hyderabad building on solid ground.</h1>
@@ -211,7 +229,7 @@
   <div class="wrap">
     <div class="about-grid">
       <div class="about-copy">
-        <p>Building Excellence. Designing Better Spaces Construction, Interior Design and Contracting Solutions in Hyderabad Eminent Infra Developers provides comprehensive construction, interior-design and contracting services for residential, commercial and industrial developments. From initial planning and structural coordination to construction, interiors and final handover, we deliver practical, aesthetically appealing and enduring spaces.Led by Mohammed Khaleeluddin, a structural engineer with 40 years of extensive experience in managing residential and commercial projects, the company combines technical expertise, disciplined project management and a commitment to quality workmanship. Build with Experience. Create with Confidence.</p>
+        <p>Eminent Infra Developers was founded in 2024 in Hyderabad with a simple premise: construction quality shouldn't be negotiable, and timelines shouldn't be a surprise. In just two years, we've delivered 9 projects — from private residences to commercial interiors and community restoration work — each personally overseen by our founders from the first survey to the final handover.</p>
         <p>What sets us apart isn't size, it's accountability: no subcontractors disappearing mid-project, no vague timelines, just a small team that stays hands-on until the job is actually done right.</p>
         <p>We work RERA-compliant on our residential projects, and our site engineering keeps clients updated on real progress at every stage of construction.</p>
       </div>
@@ -259,33 +277,33 @@
     <p class="section-intro">To add or update a photo, upload an image named exactly as shown below into the same folder as this page — it'll replace the placeholder automatically.</p>
 
     <div class="team-grid">
-      <div class="team-card">
+      <div class="team-member">
+        <div class="team-name-top">Mohammed Khaleeluddin</div>
         <div class="team-photo-wrap">
           <!-- Upload a photo named "team-1.jpg" to replace this placeholder -->
           <img src="team-1.jpg" class="team-photo" alt="Mohammed Khaleeluddin" onload="this.style.display='block';" onerror="this.style.display='none';">
           <span class="team-avatar-fallback">MK</span>
         </div>
-        <div class="team-name">Mohammed Khaleeluddin</div>
         <div class="team-role">Managing Director</div>
-        <p class="team-bio">Mohammed Khaleeluddin is a highly experienced Structural Engineer and Structural Consultant with over 40 years of professional expertise in structural design, engineering consultancy, and project guidance.Having worked extensively across the Middle East, he has been associated with numerous residential, commercial, and large-scale development projects, providing expert guidance in structural planning, design, and execution.His extensive experience, technical insight, and commitment to engineering excellence bring a strong foundation of safety, durability, precision, and structural integrity to every project he guides.At Eminent Infra Developers, his expertise contributes to creating structures that are engineered to perform, built to endure, and designed for generations</p>
+        <p class="team-bio">Leads Eminent Infra Developers' overall direction and client relationships, overseeing every project from initial planning through final handover.</p>
       </div>
-      <div class="team-card">
+      <div class="team-member">
+        <div class="team-name-top">Mohammed Aleemuddin</div>
         <div class="team-photo-wrap">
           <!-- Upload a photo named "team-2.jpg" to replace this placeholder -->
           <img src="team-2.jpg" class="team-photo" alt="Mohammed Aleemuddin" onload="this.style.display='block';" onerror="this.style.display='none';">
           <span class="team-avatar-fallback">MA</span>
         </div>
-        <div class="team-name">Mohammed Aleemuddin</div>
         <div class="team-role">Project Engineer</div>
-        <p class="team-bio">Mohammed Aleemuddin is a Civil Engineer with over 6 years of hands-on experience in residential construction and project development. His professional experience spans weekend villa homes, independent villas, and apartment projects, with a strong focus on quality construction, practical design, and efficient project execution.With an understanding of both engineering fundamentals and on-site requirements, he plays an important role in coordinating construction activities, ensuring attention to detail, maintaining quality standards, and supporting timely project completion.At Eminent Infra Developers, Mohammed Aleemuddin brings a blend of technical knowledge, field experience, and a commitment to creating well-engineered, functional, and enduring spaces</p>
+        <p class="team-bio">Manages on-site execution and structural quality across all active projects, ensuring every stage meets engineering and safety standards.</p>
       </div>
-      <div class="team-card">
+      <div class="team-member">
+        <div class="team-name-top">Name coming soon</div>
         <div class="team-photo-wrap">
           <!-- Upload a photo named "team-3.jpg" to replace this placeholder -->
           <img src="team-3.jpg" class="team-photo" alt="Team member" onload="this.style.display='block';" onerror="this.style.display='none';">
           <span class="team-avatar-fallback">?</span>
         </div>
-        <div class="team-name">Name coming soon</div>
         <div class="team-role">Role coming soon</div>
         <p class="team-bio">Bio coming soon.</p>
       </div>
